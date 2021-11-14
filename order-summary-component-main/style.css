@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
+
+/*
+    La propiedad box-shadow se creó para añadir efectos de sombra a nuestra caja.
+    En esencia lo que hace es crear un clon de la caja respetando la forma de su box-model (ancho, alto, redondez)
+    La sintaxis de box-shadow se puede escribir de distintas formas según lo que queramos conseguir.
+      Los valores que le podemos poner son:
+        offset-x -> Desplazamiento en x (obligatorio)
+        offset-y -> Desplazamiento en y (obligatorio)
+        blur-radius -> Desenfoque de la sombra
+        spread-radius -> Expansión de la sombra
+        color -> El color de la sombra, si no lo especificamos lo heredará del elemento al que pertenece
+        inset -> Determina si la sombra será interior o exterior
+*/
+
+:root {
+    /* Primary Colors */
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+/* Background / Container */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("images/pattern-background-desktop.svg") no-repeat;
+    background-size: contain;
+    background-color: var(--pale-blue);
+    min-height: 100vh;
+
+}
+
+@media (max-width: 450px){
+    .container {
+        padding: 2rem;
+        background: url("images/pattern-background-mobile.svg") no-repeat;
+        background-size: cover;
+        background-color: var(--pale-blue);
+        
+    }
+
+}
+/* Card */
+
+.card {
+    width: 450px;
+    height: auto;
+    border-radius: 20px;
+    /* border: 1px solid red; */
+    background-color: #fff;
+    text-align: center;
+    box-shadow: px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card__title {
+    margin: 2rem 0;
+}
+
+.card__text {
+    padding: 0 2rem 2rem 2rem;
+}
+
+@media (max-width:450px){
+    .card__text {
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+}
+.card__image {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card__plan {
+    padding: 1.5rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.card__plan--link {
+    font-weight: bold;
+}
+
+div.card__plan--link a:hover{
+    color:#111
+}
+
+
+
+
+/* Buttons */
+
+.card__buttons {
+    margin: 2rem 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    width: 80%;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.btn--process {
+    background-color:var(--bright-blue);
+    color: #fff;
+}
+
+.btn--process:hover {
+    background-color: hsl(224, 23%, 55%);
+    box-shadow: 0 1rem 1rem  rgba(24, 20, 20, 0.2);
+}
+
+.btn--cancel {
+    color: var(--desaturated-blue);
+}
+
+.btn--cancel:hover {
+    color: #111;
+    background-color: none;
+}
+
+
+
+
+
